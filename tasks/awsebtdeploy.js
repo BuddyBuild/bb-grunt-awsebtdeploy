@@ -70,7 +70,9 @@ module.exports = function (grunt) {
   function setupAWSOptions(options) {
     if (options.iamrole) {
         grunt.log.writeln('Using Iam role');
-        return {};
+        return {
+            region: options.region
+        };
     }
 
     if (!options.accessKeyId) options.accessKeyId = process.env.AWS_ACCESS_KEY_ID;
