@@ -1,5 +1,5 @@
 {
-  "name": bb-"grunt-awsebtdeploy",
+  "name": "bb-grunt-awsebtdeploy",
   "description": "A grunt plugin to deploy applications to AWS Elastic Beanstalk",
   "version": "0.2.2",
   "homepage": "https://github.com/buddybuild/bb-grunt-awsebtdeploy",
