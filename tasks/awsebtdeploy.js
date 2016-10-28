@@ -73,7 +73,7 @@ module.exports = function (grunt) {
 
     if (!options.accessKeyId) grunt.warn('Missing "accessKeyId"');
     if (!options.secretAccessKey) grunt.warn('Missing "secretAccessKey"');
-    
+
     var setupAwsReturnObject = {
       accessKeyId: options.accessKeyId,
       secretAccessKey: options.secretAccessKey,
@@ -81,7 +81,7 @@ module.exports = function (grunt) {
     };
 
     if (options.sessionToken) setupAwsReturnObject.sessionToken = options.sessionToken;
-
+    if (options.iamrole) return {};
     return setupAwsReturnObject;
   }
 
