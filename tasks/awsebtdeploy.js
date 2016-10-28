@@ -68,6 +68,8 @@ module.exports = function (grunt) {
   }
 
   function setupAWSOptions(options) {
+    if (options.iamrole) return {};
+
     if (!options.accessKeyId) options.accessKeyId = process.env.AWS_ACCESS_KEY_ID;
     if (!options.secretAccessKey) options.secretAccessKey = process.env.AWS_SECRET_ACCESS_KEY;
 
@@ -81,7 +83,6 @@ module.exports = function (grunt) {
     };
 
     if (options.sessionToken) setupAwsReturnObject.sessionToken = options.sessionToken;
-    if (options.iamrole) return {};
     return setupAwsReturnObject;
   }
 
