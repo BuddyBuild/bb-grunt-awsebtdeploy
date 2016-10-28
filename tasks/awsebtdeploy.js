@@ -73,12 +73,16 @@ module.exports = function (grunt) {
 
     if (!options.accessKeyId) grunt.warn('Missing "accessKeyId"');
     if (!options.secretAccessKey) grunt.warn('Missing "secretAccessKey"');
-
-    return {
+    
+    var setupAwsReturnObject = {
       accessKeyId: options.accessKeyId,
       secretAccessKey: options.secretAccessKey,
       region: options.region
     };
+
+    if (options.sessionToken) setupAwsReturnObject.sessionToken = options.sessionToken;
+
+    return setupAwsReturnObject;
   }
 
   grunt.registerMultiTask('awsebtlogs', 'Retrieve logs from AWS Elastic Beanstalk', function () {
